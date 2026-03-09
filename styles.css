@@ -116,6 +116,24 @@ h1 {
   max-width: 560px;
 }
 
+.form-note {
+  margin: -0.1rem 0 0.2rem;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.form-note-error {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.privacy-note {
+  max-width: 560px;
+  margin-top: 1rem;
+  font-size: 0.92rem;
+  color: #475569;
+}
+
 input,
 textarea {
   width: 100%;
