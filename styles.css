@@ -74,11 +74,39 @@ h1 {
   padding: 1rem;
 }
 
+.pricing-cards {
+  align-items: stretch;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.price {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.featured {
+  border-color: #1d4ed8;
+  box-shadow: 0 10px 24px rgba(29, 78, 216, 0.16);
+}
+
 .section-cta {
   background: #fff;
   border-radius: 14px;
   margin-bottom: 2rem;
   border: 1px solid #e5e7eb;
+}
+
+.contact-phone a {
+  color: #1d4ed8;
+  font-weight: 700;
 }
 
 .form {

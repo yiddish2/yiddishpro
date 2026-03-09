@@ -3,8 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Yiddish Web Pro builds fast, mobile-friendly business websites with clear branding and lead-focused contact forms."
+    />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://yiddishwebpro.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Yiddish Web Pro" />
+    <meta property="og:title" content="Yiddish Web Pro | Website Builder" />
+    <meta
+      property="og:description"
+      content="Websites that look sharp and get customers. Fast, mobile-friendly sites for real businesses."
+    />
+    <meta property="og:url" content="https://yiddishwebpro.com/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Yiddish Web Pro | Website Builder" />
+    <meta
+      name="twitter:description"
+      content="Fast websites for real businesses with modern design, mobile support, and lead forms."
+    />
+    <meta name="theme-color" content="#0f172a" />
     <title>Yiddish Web Pro | Website Builder</title>
     <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Yiddish Web Pro",
+        "url": "https://yiddishwebpro.com/"
+      }
+    </script>
   </head>
   <body>
     <header class="hero">
@@ -42,13 +71,47 @@
         </div>
       </section>
 
+      <section class="section">
+        <h2>Pricing</h2>
+        <div class="cards pricing-cards">
+          <article class="card pricing-card">
+            <h3>Starter Site</h3>
+            <p class="price">$499</p>
+            <p>One-page website, mobile-ready design, and contact form setup.</p>
+          </article>
+          <article class="card pricing-card featured">
+            <h3>Business Site</h3>
+            <p class="price">$999</p>
+            <p>Up to 5 pages, custom branding, lead form, and basic SEO setup.</p>
+          </article>
+          <article class="card pricing-card">
+            <h3>Growth Site</h3>
+            <p class="price">$1,499</p>
+            <p>Up to 10 pages, speed optimization, SEO essentials, and revisions.</p>
+          </article>
+        </div>
+      </section>
+
       <section id="contact" class="section section-cta">
         <h2>Let’s Build Your Site</h2>
         <p>Send a message and we will get back to you.</p>
-        <form class="form">
-          <input type="text" placeholder="Your name" required />
-          <input type="email" placeholder="Email address" required />
-          <textarea placeholder="Tell us what you need" rows="5" required></textarea>
+        <p class="contact-phone">
+          Prefer to call? <a href="tel:+15203337689">(520) 333-7689</a>
+        </p>
+        <form
+          class="form"
+          action="mailto:yidweb@protonmail.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Email address" required />
+          <textarea
+            name="message"
+            placeholder="Tell us what you need"
+            rows="5"
+            required
+          ></textarea>
           <button class="btn btn-primary" type="submit">Send Request</button>
         </form>
       </section>
