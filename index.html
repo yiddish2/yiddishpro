@@ -112,16 +112,15 @@
             value="https://yiddishwebpro.com/?submitted=1#contact"
           />
           <input type="text" name="name" placeholder="Your name" required />
-          <input id="email" type="email" name="email" placeholder="Email address (optional)" />
           <input
-            id="phone"
-            type="tel"
-            name="phone"
-            placeholder="Phone number (optional)"
-            pattern="[0-9+()\\-\\s]{7,20}"
+            id="contact-method"
+            type="text"
+            name="contact"
+            placeholder="Email or phone number"
+            required
           />
           <p id="contact-method-hint" class="form-note">
-            Share either an email address or a phone number so we can reply.
+            Enter either your email address or phone number so we can reply.
           </p>
           <textarea
             name="message"
@@ -139,28 +138,28 @@
     </main>
     <script>
       const contactForm = document.getElementById("contact-form");
-      const emailInput = document.getElementById("email");
-      const phoneInput = document.getElementById("phone");
+      const contactInput = document.getElementById("contact-method");
       const contactHint = document.getElementById("contact-method-hint");
 
       contactForm.addEventListener("submit", (event) => {
-        const hasEmail = emailInput.value.trim().length > 0;
-        const hasPhone = phoneInput.value.trim().length > 0;
+        const contactValue = contactInput.value.trim();
+        const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactValue);
+        const isPhone = /^[0-9+()\-\s]{7,20}$/.test(contactValue);
 
-        if (!hasEmail && !hasPhone) {
+        if (!isEmail && !isPhone) {
           event.preventDefault();
-          contactHint.textContent = "Please add either an email address or phone number.";
+          contactHint.textContent =
+            "Please enter a valid email address or phone number.";
           contactHint.classList.add("form-note-error");
         }
       });
 
-      [emailInput, phoneInput].forEach((field) => {
-        field.addEventListener("input", () => {
-          if (emailInput.value.trim() || phoneInput.value.trim()) {
-            contactHint.textContent = "Share either an email address or a phone number so we can reply.";
-            contactHint.classList.remove("form-note-error");
-          }
-        });
+      contactInput.addEventListener("input", () => {
+        if (contactInput.value.trim()) {
+          contactHint.textContent =
+            "Enter either your email address or phone number so we can reply.";
+          contactHint.classList.remove("form-note-error");
+        }
       });
     </script>
   </body>
