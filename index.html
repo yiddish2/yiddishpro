@@ -119,9 +119,6 @@
             placeholder="Email or phone number"
             required
           />
-          <p id="contact-method-hint" class="form-note">
-            Enter either your email address or phone number so we can reply.
-          </p>
           <textarea
             name="message"
             placeholder="Tell us what you need"
@@ -139,7 +136,6 @@
     <script>
       const contactForm = document.getElementById("contact-form");
       const contactInput = document.getElementById("contact-method");
-      const contactHint = document.getElementById("contact-method-hint");
 
       contactForm.addEventListener("submit", (event) => {
         const contactValue = contactInput.value.trim();
@@ -148,18 +144,15 @@
 
         if (!isEmail && !isPhone) {
           event.preventDefault();
-          contactHint.textContent =
-            "Please enter a valid email address or phone number.";
-          contactHint.classList.add("form-note-error");
+          contactInput.setCustomValidity(
+            "Please enter a valid email address or phone number."
+          );
+          contactInput.reportValidity();
         }
       });
 
       contactInput.addEventListener("input", () => {
-        if (contactInput.value.trim()) {
-          contactHint.textContent =
-            "Enter either your email address or phone number so we can reply.";
-          contactHint.classList.remove("form-note-error");
-        }
+        contactInput.setCustomValidity("");
       });
     </script>
   </body>
