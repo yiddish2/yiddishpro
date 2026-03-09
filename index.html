@@ -100,10 +100,16 @@
         </p>
         <form
           class="form"
-          action="mailto:yidweb@protonmail.com"
-          method="post"
-          enctype="text/plain"
+          action="https://formsubmit.co/yidweb@protonmail.com"
+          method="POST"
         >
+          <input type="hidden" name="_subject" value="New Website Request - Yiddish Web Pro" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://yiddishwebpro.com/?submitted=1#contact"
+          />
           <input type="text" name="name" placeholder="Your name" required />
           <input type="email" name="email" placeholder="Email address" required />
           <textarea
